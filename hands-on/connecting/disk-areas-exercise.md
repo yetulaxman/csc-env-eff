@@ -109,3 +109,26 @@ More detailed information about batch job specific local storage can be found
 [here](../../computing/disk.md).                 
  
 ### I/O job operation using batch job
+Let's take a different example to convert a docker images to singularity image using fast local scratch area ($LOCAL_SCRATCH).
+
+```bash
+#!/bin/bash
+#SBATCH --time=00:30:00
+#SBATCH --partition=small
+#SBATCH --account=project_2003682
+#SBATCH  --gres=nvme:100
+
+export TMPDIR=$LOCAL_SCRATCH
+export SINGULARITY_CACHEDIR=$LOCAL_SCRATCH
+singularity pull docker://trinityrnaseq/trinityrnaseq
+```
+
+
+#!/bin/bash
+#SBATCH --time=00:30:00
+#SBATCH --partition=small
+#SBATCH --account=project_2003682
+export TMPDIR=/scratch/project_2003682/$USER
+export SINGULARITY_CACHEDIR=/scratch/project_2003682/$USER
+singularity pull docker://trinityrnaseq/trinityrnaseq
+
