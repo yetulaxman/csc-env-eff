@@ -2,14 +2,15 @@
 title: Disk areas in CSC supercomputing environment
 ---
 
-### Learning Objectives
+## Learning Objectives
 Users at CSC supercomputers have been granted with personal and project-specific disk areas. It is important to understand different disk areas that belong to you in order to manage your and other project memebrs data.
 
 Upon completion of this tutorial, you will get familiar with:
-- Main disk areas and their quotas in CSC supercomputing environment
+- Personal and project-specific disk areas and their quotas in CSC supercomputing environment
+- Ideal disk areas for large IO operations
 - Navigating between different project-specific disk areas
 
-## How do you identify your disk areas in Puhti and Mahti supercomputers?
+### How do you identify your personal and project-specific directories in Puhti and Mahti supercomputers?
 
 CSC has main different disk areas (or directories), each one with specific purpose. Let's get familiar with them.
 
@@ -23,4 +24,26 @@ Resulting output from the above command shows lot of information about different
 - Project-specific directories which are scratch  and projappl directories. Each project has by default 1 TB of scratch disk space. It is a temporary storage space in supercomputers and the files that have not been used for 90 days will be automatically removed. ProjAppl directory on the other hand can contain up to 50 GB of data and is mainly for storing and sharing compiled applications and libraries etc. with other members of the project. 
 
 
-## Mac
+### What would be the ideal disk space for large scale IO operations in CSC computing environment?
+
+Once in a while we come across the cases where we have to handle uncommonly large number of smaller files which cause heavy IO load on supercomputing environment. In order to facilitate such operations, CSC has provided fast local disk arease in login and compute nodes.
+
+In order to identify such directories in login nodes in Puhti/Maht, use the following command:
+
+```bash
+echo $TMPDIR
+```
+This space for example be useful for pre- and post-processing of large files. 
+
+However, if you are going to do some computing tasks on those larger number of smaller files, we will use local storage areas in compute nodes which are accessed either interactively or using batch jobs.
+
+In the [interactive jobs](https://docs.csc.fi/computing/running/interactive-usage/), isssue the following command to find out local storage area in that compute node:
+
+```bash
+echo $TMPDIR
+```
+When using batch job, use the environment variable $LOCAL_SCRATCH in your [batch job scripts](https://docs.csc.fi/computing/running/creating-job-scripts-puhti/#local-storage) to access the local storage on each node.
+
+
+
+
