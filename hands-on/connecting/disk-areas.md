@@ -1,4 +1,4 @@
-# Log in Puhti with ssh
+# Learning Objectives
 
 This tutorial requires that you have a [user account at CSC](https://docs.csc.fi/accounts/how-to-create-new-user-account/)
 and it is a member of a project that [has access to Puhti service](https://docs.csc.fi/accounts/how-to-add-service-access-for-project/).
