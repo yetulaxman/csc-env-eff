@@ -44,9 +44,9 @@ echo $TMPDIR
 ```
 When using batch job, use the environment variable $LOCAL_SCRATCH in your [batch job scripts](https://docs.csc.fi/computing/running/creating-job-scripts-puhti/#local-storage) to access the local storage on each node.
 
-### How do you navigate to different project-specific directories?
+### How do you navigate to different project-specific directories on scratch driver?
 
-A CSC user can have multiple projects and often needs to switch between different projects. Currently, all directories on scratch drive are project-based and one should be aware of a project number to find out actual path on scratch directory. While we can actually find scratch directories corresponding to all your projects numbers using `csc-workspace`, it may not be immediately obvious to map those project numbers to meta data of your projects. You can instead use the following command to find more descriptions related to your project.
+A CSC user often has multiple projects and often needs to switch between different projects. Currently, all directories on scratch drive are project-based and one should be aware of a project number to find out actual path on scratch directory. While we can actually find scratch directories corresponding to all your projects numbers using `csc-workspace`, it may not be immediately obvious to map those project numbers to meta data of your projects. You can instead use the following command to find more descriptions related to your project.
 
 ```bash
 csc-projects
