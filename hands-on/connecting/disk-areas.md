@@ -3,12 +3,12 @@ title: Disk areas in CSC supercomputing environment
 ---
 
 ## Learning Objectives
-Users at CSC supercomputers have been granted with disk areas. It is important to understand your disk areas to manage personal and project-specific data.
+CSC users working at supercomputing environment have been granted with different disk areas (or directories) to manage their data in supercomputers. It is therefore important to understand your disk areas to manage personal and project-specific data.
 
 Upon completion of this tutorial, you will get familiar with:
 - Personal and project-specific disk areas and their quotas in CSC supercomputing environment
 - Ideal disk areas for large IO operations
-- Navigating between different project-specific disk areas
+- Navigating to different project-specific disk areas
 
 ### How do you identify your personal and project-specific directories in Puhti and Mahti supercomputers?
 
@@ -44,13 +44,16 @@ echo $TMPDIR
 ```
 When using batch job, use the environment variable $LOCAL_SCRATCH in your [batch job scripts](https://docs.csc.fi/computing/running/creating-job-scripts-puhti/#local-storage) to access the local storage on each node.
 
-### How do you navigate between different project-specific directories?
+### How do you navigate to different project-specific directories?
 
-A CSC user can have multiple projects and often needs to switch between different projects. Currently, all directories on scratch drive are project-based and one should be aware of a project number to find out actual path of a given project. While we can actually find scratch directories corresponding to all your projects numbers using `csc-workspace`, it may not be immediately obvious to map those project numbers to meta data of projects. You can instead use the following command
-to find more descriptions related to your project.
+A CSC user can have multiple projects and often needs to switch between different projects. Currently, all directories on scratch drive are project-based and one should be aware of a project number to find out actual path on scratch directory. While we can actually find scratch directories corresponding to all your projects numbers using `csc-workspace`, it may not be immediately obvious to map those project numbers to meta data of your projects. You can instead use the following command to find more descriptions related to your project.
 
 ```bash
 csc-projects
 ```
-Good thing about this command is that you will also get billing units information associated with each of your project.
+Good thing about this command is that you will also get billing units information associated with each of your project. Once your know the project number, you can navigate to your project directory on scratch as below:
+
+```bash
+cd /scratch/project_number
+```
 
