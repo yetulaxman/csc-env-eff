@@ -43,20 +43,15 @@ rsync -azP sofwtareA_binary <username>@mahti.csc.fi:/scratch/project_1234
 
 Note: you can also you CSC object storage environment (i.e., Allas) to share files between supercomputers.
 
-### IO job operations
-An interactive batch job Puhti allows you to have a Puhti session that can have up to:
-*   4 cores
-*   64 GB of memory
-*   7 days of run time
-*   640 GB of fast local scratch disk
+### What would be ideal disk area to use to work with big data file (e.g, tar file containing 52000 small files) and require analysis on every small file.
 
 To launch an interactive session in Puhti, execute command:
 ```text
 sinteractive -i
 ```
-One of the useful features of interactive batch jobs is the **fast local scratch area ($LOCAL_SCRATCH)**. The “normal” Lustre based project specific directories, *scratch* and *projappl*, can store large amounts of data and make it accessible to all the nodes of Puhti. However these directories are not good for managing a large number of files. 
+One of the useful features of interactive jobs is the **fast local scratch area ($LOCAL_SCRATCH)**. The “normal” Lustre based project specific directories, *scratch* and *projappl*, can store large amounts of data and make it accessible to all the nodes of Puhti. However these directories are not good for managing a large number of files. 
 
-Generally you should avoid work flows that require creating thousands of small files. If you anyhow need to work with a huge number of files, 
+Generally you should avoid workflows that require creating thousands of small files. If you anyhow need to work with a huge number of files, 
 you should consider using the NVME based local temporary scratch directories, either through normal or interactive batch jobs.
 The local scratch area is visible only for the specific batch job and it is erased when the batch job ends. 
 Because of that you always first need to import your data set to the local scratch and when you finish, copy the data you want to preserve back to some more 
@@ -123,7 +118,7 @@ export SINGULARITY_CACHEDIR=$LOCAL_SCRATCH
 singularity pull docker://trinityrnaseq/trinityrnaseq
 ```
 
-
+```bash
 #!/bin/bash
 #SBATCH --time=00:30:00
 #SBATCH --partition=small
@@ -131,4 +126,4 @@ singularity pull docker://trinityrnaseq/trinityrnaseq
 export TMPDIR=/scratch/project_2003682/$USER
 export SINGULARITY_CACHEDIR=/scratch/project_2003682/$USER
 singularity pull docker://trinityrnaseq/trinityrnaseq
-
+```
