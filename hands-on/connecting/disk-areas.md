@@ -1,75 +1,26 @@
-# Learning Objectives
+---
+title: Disk areas in CSC supercomputing environment
+---
 
-This tutorial requires that you have a [user account at CSC](https://docs.csc.fi/accounts/how-to-create-new-user-account/)
-and it is a member of a project that [has access to Puhti service](https://docs.csc.fi/accounts/how-to-add-service-access-for-project/).
+### Learning Objectives
+Users at CSC supercomputers have been granted with personal and project-specific disk areas. It is important to understand different disk areas that belong to you in order to manage your and other project memebrs data.
 
-Different operating systems have a little bit different SSH-clients (programs that
-you can use to take the connection with).
+Upon completion of this tutorial, you will get familiar with:
+- Main disk areas and their quotas in CSC supercomputing environment
+- Navigating between different project-specific disk areas
 
-## Windows10
+## How do you identify your disk areas in Puhti and Mahti supercomputers?
 
-On Windows 10, you can use the *Windows Power Shell*
-or [download Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), or 
-[download and install MobaXterm](https://mobaxterm.mobatek.net/download.html).
+CSC has main different disk areas (or directories), each one with specific purpose. Let's get familiar with them.
 
-In this tutorial, we assume you use Windows Power Shell. More examples can be found
-in docs](https://docs.csc.fi/computing/connecting/).
-- Select Windows Power Shell from the applications list (opens from the windows logo) or search for it
-in the bottom bar search box.
-
-- In the windows-blue terminal window type:
 ```bash
-ssh <your_csc_username>@puhti.csc.fi
+csc-workspaces 
 ```
-- replace above `<your_csc_username>` with your actual csc username, or training account
-  which ever you're using, and press enter
+Resulting output from the above command shows lot of information about different directories and their current quota. Briefly, these directories are as below:
+
+- user-specific directory which is your home directory ($HOME) which can contain data up to 10 GB. It is default directory when you login to Puhti/Mahti. Its purpose is to store configuration files and other minor personal data. 
+
+- Project-specific directories which are scratch  and projappl directories. Each project has by default 1 TB of scratch disk space. It is a temporary storage space in supercomputers and the files that have not been used for 90 days will be automatically removed. ProjAppl directory on the other hand can contain up to 50 GB of data and is mainly for storing and sharing compiled applications and libraries etc. with other members of the project. 
+
 
 ## Mac
-
-FIXME
-
-## Linux
-
-Laptops and workstations running Linux typically have SSH installed. Simply open a terminal
-and give:
-```bash
-ssh <your_csc_username>@puhti.csc.fi
-```
-
-- if you're connecting to Puhti (or that Puhti login node) for the first time, SSH will
-  ask you if you trust the authenticity of the host, e.g.:
-
-```text
-The authenticity of host 'puhti-login1.csc.fi (86.50.164.166)' can't be established.
-ECDSA key fingerprint is SHA256:EXhadfadsfsaffasjhdlfjhasdlfkjhadsl.
-Are you sure you want to continue connecting (yes/no/[fingerprint])?
-```
-- the first time you connect, you need to accept, but the key should not change for the next
-  login (but be sure to check whether it's login1 or login2).
-- Once you've logged in you'll see a greeting starting something like this:
-```
-Last login: Mon Dec 14 14:53:15 2020 from jabadabaduu.fi
-┌─ Welcome ───────────────────────────────────────────────────────────────────┐
-│         CSC - Tieteen tietotekniikan keskus - IT Center for Science         │
-│            ____        __    __  _                                          │
-│           / __ \__  __/ /_  / /_(_)   - -  -   -                            │
-│          / /_/ / / / / __ \/ __/ /   - -  -   -                             │
-│         / ____/ /_/ / / / / /_/ /   - -  -   -                              │
-│        /_/    \__,_/_/ /_/\__/_/   - -  -   -                               │
-│                                                                             │
-│      Puhti.csc.fi - Atos BullSequana X400 - 682 CPU nodes - 80 GPU nodes    │
-├─ Contact ───────────────────────────────────────────────────────────────────┤
-│ Servicedesk : 09-457 2821, servicedesk@csc.fi   Switchboard : 09-457 2001   │
-├─ User Guide ────────────────────────────────────────────────────────────────┤
-│ https://docs.csc.fi                                                         │
-├─ Manage my account ─────────────────────────────────────────────────────────┤
-│ https://my.csc.fi/                                                          │
-...
-
-└─────────────────────────────────────────────────────────────────────────────┘
-[<your username>@puhti-login1 ~]$
-```
-Now, you're ready to go. Note, however, that remote graphics will not work. You could
-add X11-tunneling to your ssh-connection, by adding `-X` or `-Y` to your command, and
-[in Windows a separate X11-emulator](),  but [for intesive remote graphics we recommend
-using NoMachine](). 
