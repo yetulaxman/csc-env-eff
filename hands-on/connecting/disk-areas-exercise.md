@@ -97,7 +97,7 @@ We could do the same analysis procedure in the scratch directory too.  Below is 
  
 ### How do you make use of local scratch drive on compute node for faster computational tasks? Convert the following normal batch job into the one that uses local scratch drive?
 
-Below is a normal batch job that pulls docker image from DockerHub and converts into a singularity one  that is compatible for working in HPC environment such as CSC Puhti and Mahti supercomputers. During the conversion process, several layers are retrieved, cached and then converted into singularity file (.sif format)
+Below is a normal batch job that pulls docker image from DockerHub and converts into a singularity one  that is compatible for working in HPC environment such as CSC Puhti and Mahti supercomputers. During the conversion process, several layers are retrieved, cached and then converted into a singularity file (.sif format)
 
 ```bash
 #!/bin/bash
