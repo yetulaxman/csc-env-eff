@@ -50,13 +50,13 @@ Note: you can also you CSC object storage environment (i.e., Allas) to share fil
 *Background*: The “normal” Lustre based project specific directories, *scratch* and *projappl*, can store large amounts of data and make it accessible to all the nodes of Puhti. However these directories are not good for managing a large number of files.  If you anyhow need to work with a huge number of files, you should consider using the NVME based local temporary scratch directories, either through normal or interactive batch jobs.
 
 ***hints:***
-- Use interactive job option. One can launch an interactive session the following command:
+- Use interactive job option. One can launch an interactive session using the following command:
 ```text
 interactive -c 2 -m 4G -d 250 #  grants you a compute node with 2 cores, 4 GB of memory and 250 GB of fast temporary scratch disk.
 ```
-- Move to the local scratch area using environment variable $LOCAL_SCRATCH and open the tar package to the fast local disk.
-- Run the analysis using the command *transeq* to translate all the fasta files
-- After analysis, create again a tar file with protein sequences
+- Move to fast local scratch area (i.e, cd $LOCAL_SCRATCH) and unpack tar file to local scratch directory.
+- Run the analysis using the command *transeq* to translate all the fasta files (i.e., transeq necleicacid_input.file  protein_output.file)
+- After analysis on each file, create again a tar file with protein sequences
 
 ***Solution:***
 
