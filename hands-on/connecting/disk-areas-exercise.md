@@ -113,7 +113,7 @@ Here is a normal batch job that pulls docker image from DockerHub and converts t
 #SBATCH --partition=small
 #SBATCH --account=project_xxx
 
-export SINGULARITY_CACHEDIR=/scratch/project_2003682/$USER
+export SINGULARITY_CACHEDIR=/scratch/project_xxxx/$USER
 singularity pull --name trinity.simg  docker://trinityrnaseq/trinityrnaseq
 ```
 
@@ -129,7 +129,7 @@ singularity pull --name trinity.simg  docker://trinityrnaseq/trinityrnaseq
 - Please move any data to shared area once  the job is finished
 
 
-***Solution***
+*Solution:*
 
 ```bash
 #!/bin/bash
