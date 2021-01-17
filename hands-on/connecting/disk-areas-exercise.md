@@ -43,49 +43,48 @@ rsync -azP sofwtareA_binary <username>@mahti.csc.fi:/scratch/project_1234
 
 Note: you can also you CSC object storage environment (i.e., Allas) to share files between supercomputers.
 
-### What would be ideal disk area to perform a task that require high I/O operations (e.g, handling big tar file containing 52000 small files)?
+### What would be ideal disk area to perform the following task that require high I/O operations ?
+*The task  description*: a big tar file contains around 52000 small files, each file containing one or more nucleotide sequences. Unpack the tar file and convert the necleic acids sequences each file to corresponing protein sequences using *transeq* software. Once analysis is finished, make tar file again.
 
-The “normal” Lustre based project specific directories, *scratch* and *projappl*, can store large amounts of data and make it accessible to all the nodes of Puhti. However these directories are not good for managing a large number of files.  If you anyhow need to work with a huge number of files, you should consider using the NVME based local temporary scratch directories, either through normal or interactive batch jobs.
 
-To launch an interactive session in Puhti, execute command:
+*Background*: The “normal” Lustre based project specific directories, *scratch* and *projappl*, can store large amounts of data and make it accessible to all the nodes of Puhti. However these directories are not good for managing a large number of files.  If you anyhow need to work with a huge number of files, you should consider using the NVME based local temporary scratch directories, either through normal or interactive batch jobs.
+
+***hints:***
+- Use interactive job option. One can launch an interactive session the following command:
 ```text
-sinteractive -i
+interactive -c 2 -m 4G -d 250 #  grants you a compute node with 2 cores, 4 GB of memory and 250 GB of fast temporary scratch disk.
 ```
-To demonstrate the effectivity of local scratch area let’s study a sample directory called *big_data*. The directory contains about 100 GiB of data in 120 000 files. In the beginning the data is packed in one tar-archive file in the scratch directory of project 2001234 (/scratch/project_2001234/big_data.tar)
+- Move to the local scratch area using environment variable $LOCAL_SCRATCH and open the tar package to the fast local disk.
+- Run the analysis using the command *transeq* to translate all the fasta files
+- After analysis, create again a tar file with protein sequences
 
-First we launch an interactive batch job with 2 cores, 4 GB of memory and 250 GB of fast temporary scratch disk.
-```text
+***Solution:***
+
+```
+# launch an interactive session with required resources
 interactive -c 2 -m 4G -d 250
-```
-The analysis is then done in three steps:
 
-**Step 1**. Move to the local scratch area using environment variable $LOCAL_SCRATCH and open the tar package to the fast local disk.
-```
+# chnage working directory to fast local scratch directory
 cd $LOCAL_SCRATCH
-tar xvf /scratch/project_2001234/big_data.tar ./
-```
 
-**Step 2**. Run the analysis. This time we run a for loop that uses command *transeq* to translate all the fasta files, found in the big_data directory, 
-into new protein sequence files:
-```text
+# unpack tar file (fix this link)
+
+wget htttp:a3s.fi/big_data.tar
+tar big_data.tar ./
+
+# perform actual analysis
+
 for ffile in $(find ./ | grep fasta$ )
 do
      transeq $ffile ${ffile}.pep
 done 
+
+# pack all the resulting files
+tar cvf big_data.pep.tar ./
+
 ```
-In this example about 52000 fasta files were found, so after the processing the big_data directory contains 52000 more small files. 
 
-The actual translation is a simple task so relatively much time is consumed to just open and close files.
-
-
-**Step 3**. When the processing is finished we store the results back to scratch directory into a new tar file.
-
-```text
-tar cvf /scratch/project_2001234/big_data.pep.tar ./
-```
-Now the results are safe in one file in scratch directory and we can exit from the interactive session.
-
-We could do the same analysis procedure in the scratch directory too.  Below is execution time comparison for running the three steps above in LOCAL_SCRATCH and in normal scratch.  The response times of LOCAL_SCRATCH are rather stable, but in the scratch directory the execution times will vary much, due to changes in the total load of the Lustre file system.
+Below is execution time comparison for running the three steps above in LOCAL_SCRATCH and in normal scratch.  The response times of LOCAL_SCRATCH are rather stable, but in the scratch directory the execution times will vary much, due to changes in the total load of the Lustre file system.
 
 |                               | LOCAL_SCRATCH |         scratch|
 |-------------------------------|---------------|----------------|    
