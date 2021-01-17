@@ -4,52 +4,48 @@ title: Disk areas in CSC supercomputing environment
 
 #### Imagine that you have a data file and software binary (e.g., data.txt and softwareA_binary) on your Puhti home directory and  also have a shared project (e.g., project_1234) on Puhti and Mahti. How would you safely share your files to other project members on the same supercomputer (i.e., on Puhti) as well as on Mahti (i.e, another supercomputer at CSC)?
 
-*Background*: This exercise is aimed at familiaring yourself with main disc areas in Puhti and Mahti supercomputers. Data files needed for computational analysis should be stored and shared in scratch directories and any software compiliations and binaries should be shared in proappl directory. In order to find actual directories use commands such as `csc-workspaces` and `csc-projects`. Data transfer between two supercomputers can be done with many tools including `rsync`. In this example try to avoid using allas for data transfer between the supercomupters. 
+*Background*: This exercise is aimed at familiarising yourself with main disc areas in Puhti and Mahti supercomputers. Data files needed for computational analysis should be stored and shared in *scratch* directories and any software compilations and binaries should be shared in *proappl* directory. In order to find actual directories use commands such as `csc-workspaces` and `csc-projects`. Data transfer between two supercomputers can be done with many tools including `rsync`. In this example try to avoid using allas for data transfer between the supercomupters. 
 
 ***solution:***
 
-1. First login to Puhti supecomputer.
+1. First login to Puhti supecomputer using *ssh* command as below:
 
 ```bash
 ssh <username>@puhti.csc.fi
 ```
-You end up in home directory once you login to Puhti. Let's assume that file data.txt is intended for computational use and softwareA_binary is as software needed for analysis
-As you know the project name, you can share file data.txt in scratch folder and softwareA_binary in Projapple directory.
+Authenticate using the password associated with CSC user account. Once your login to Puhti is successful, linux terminal will be opened for command line interaction in your home directory. Let's assume that file *data.txt* is intended for computational use and *softwareA_binary* is as a software tool needed for analysis. As you know the project name, you can share file *data.txt* in scratch folder and *softwareA_binary* file in projapple directory.
 
-2. Share your softwareA_binary in Projapple directory
+2. Share your *softwareA_binary* file in *projapple* directory
 
 ```bash
 cp softwareA_binary  /projapple/project_1234
 ````
 
-3. Share data file in scratch directory
+3. Share *data.txt* file in *scratch* directory
 ```bash
 cp data.txt /scratch/project_1234
 ```
-All new files and directories are also fully accessible for other group members (including read, write and execution permissions). If you want to restrict access from your group members, you can reset the permissions with the chmod command.
+All new files and directories are also fully accessible for other group members (including read, write and execution permissions). If you want to restrict access from your group members, you can reset the permissions with the *chmod* command.
 
-Setting read-only permissions for your group members for the directory my_directory:
+Set read-only permissions for your group members for the file *data.txt*:
 
 ```bash
 chmod -R g-w data.txt
 ```
-4. sharing files on Mahti computer
-you can copy data.txt file on puhti to scratch drive on Mahti as below:
+4. sharing files in Mahti supercomputer
+you can copy *data.txt* file on puhti to *scratch* drive on Mahti as below:
 
 ```bash
-rsync -azP data.txt <username>@mahti.csc.fi:/scratch/project_1234
+rsync -P data.txt <username>@mahti.csc.fi:/scratch/project_1234
 ```
-you can copy sofwtareA_binary file on puhti to projapple directory on Mahti as below:
+you can copy *sofwtareA_binary* file on puhti to *projapple* directory on Mahti as below:
 
 ```bash
-rsync -azP sofwtareA_binary <username>@mahti.csc.fi:/scratch/project_1234
+rsync -P sofwtareA_binary <username>@mahti.csc.fi:/scratch/project_1234
 ```
-
-Note: you can also you CSC object storage environment (i.e., Allas) to share files between supercomputers.
 
 #### What would be ideal disk area to perform the following task that require high I/O operations ?
 *The task  description*: a big tar file contains around 52000 small files, each file containing one or more nucleotide sequences. Unpack the tar file and convert the necleic acids sequences in each file to corresponing protein sequences using *transeq* software. Once analysis is finished, pack all files into a tar file again.
-
 
 *Background*: The “normal” Lustre based project specific directories, *scratch* and *projappl*, can store large amounts of data and make it accessible to all the nodes of Puhti. However these directories are not good for managing a large number of files.  If you anyhow need to work with a huge number of files, you should consider using the NVME based local temporary scratch directories, either through normal or interactive batch jobs.
 
