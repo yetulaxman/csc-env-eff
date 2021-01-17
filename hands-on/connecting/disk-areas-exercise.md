@@ -13,7 +13,7 @@ title: Disk areas in CSC supercomputing environment
 ```bash
 ssh <username>@puhti.csc.fi
 ```
-Authenticate using the password associated with CSC user account. Once your login to Puhti is successful, linux terminal will be opened for command line interaction in your home directory. Let's assume that file *data.txt* is intended for computational use and *softwareA_binary* is as a software tool needed for analysis. As you know the project name, you can share file *data.txt* in scratch folder and *softwareA_binary* file in projapple directory.
+Authenticate using the password associated with CSC user account. Once your login to Puhti is successful, Linux terminal will be opened for command-line interaction in your home directory. Let's assume that file *data.txt* is intended for computational use and *softwareA_binary* is a software tool needed for analysis. As you know the project name, you can share file *data.txt* in scratch folder and *softwareA_binary* file in projapple directory.
 
 2. Share your *softwareA_binary* file in *projapple* directory
 
@@ -45,16 +45,16 @@ rsync -P sofwtareA_binary <username>@mahti.csc.fi:/scratch/project_1234
 ```
 
 #### What would be ideal disk area to perform the following task that require high I/O operations ?
-*The task  description*: a big tar file contains around 52000 small files, each file containing one or more nucleotide sequences. Unpack the tar file and convert the necleic acids sequences in each file to corresponing protein sequences using *transeq* software. Once analysis is finished, pack all files into a tar file again.
+*The task description*: a big tar file contains around 52000 small files, each file containing one or more nucleotide sequences. Unpack the tar file and convert the nUcleic acids sequences in each file to corresponding protein sequences using *transeq* software. Once analysis is finished, pack all files into a tar file again.
 
-*Background*: The “normal” Lustre based project specific directories, *scratch* and *projappl*, can store large amounts of data and make it accessible to all the nodes of Puhti. However these directories are not good for managing a large number of files.  If you anyhow need to work with a huge number of files, you should consider using the NVME based local temporary scratch directories, either through normal or interactive batch jobs.
+*Background*: The “normal” Lustre based project-specific directories, *scratch* and *projappl*, can store large amounts of data and make it accessible to all the nodes of Puhti. However, these directories are not good for managing a large number of files.  If you anyhow need to work with a huge number of files, you should consider using the NVME based local temporary scratch directories, either through normal or interactive batch jobs.
 
 ***hints:***
 - Use interactive job option. One can launch an interactive session using the following command:
 ```text
 interactive -c 2 -m 4G -d 250 #  grants you a compute node with 2 cores, 4 GB of memory and 250 GB of fast temporary scratch disk.
 ```
-- Move to fast local scratch area (i.e, cd $LOCAL_SCRATCH) and unpack tar file to local scratch directory.
+- Move to fast local scratch area (i.e, cd $LOCAL_SCRATCH) and unpack tar file to the local scratch directory.
 - Run the analysis using the command *transeq* to translate all the fasta files (i.e., transeq necleicacid_input.file  protein_output.file)
 - After analysis on each file, create again a tar file with protein sequences
 
@@ -84,7 +84,7 @@ tar cvf big_data.pep.tar ./
 
 ```
 
-Below is execution time comparison for running the three steps above in LOCAL_SCRATCH and in normal scratch.  The response times of LOCAL_SCRATCH are rather stable, but in the scratch directory the execution times will vary much, due to changes in the total load of the Lustre file system.
+Below is the execution time comparison for running the three steps above in LOCAL_SCRATCH and in normal scratch.  
 
 |                               | LOCAL_SCRATCH |         scratch|
 |-------------------------------|---------------|----------------|    
@@ -96,7 +96,7 @@ Below is execution time comparison for running the three steps above in LOCAL_SC
  
 #### How do you make use of local scratch drive on compute node for faster computational tasks? Convert the following normal batch job into the one that uses local scratch drive?
 
-Below is a normal batch job that pulls docker image from DockerHub and converts into a singularity one  that is compatible for working in HPC environment such as CSC Puhti and Mahti supercomputers. During the conversion process, several layers are retrieved, cached and then converted into a singularity file (.sif format)
+Below is a normal batch job that pulls docker image from DockerHub and converts into a singularity one that is compatible with working in HPC environments such as CSC Puhti and Mahti supercomputers. During the conversion process, several layers are retrieved, cached and then converted into a singularity file (.sif format)
 
 ```bash
 #!/bin/bash
@@ -116,7 +116,7 @@ singularity pull --name trinity.simg  docker://trinityrnaseq/trinityrnaseq
 #SBATCH --gres=nvme:<local_storage_space_per_node>  # e.g., to claim 200 GB of storage, use option --gres=nvme:200. 
 
 ```
-- Use the environment variable $LOCAL_SCRATCH to access the local storage on each node.
+- Use environment variable $LOCAL_SCRATCH to access the local storage on each node.
 
 - Please move any data to shared area once  the job is finished
 
