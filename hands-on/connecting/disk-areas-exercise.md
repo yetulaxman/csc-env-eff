@@ -142,3 +142,8 @@ singularity pull --name trinity.simg docker://trinityrnaseq/trinityrnaseq
 mv trinity.simg /scratch/project_xxx/$USER/                                                            
 ```
 
+Below is execution time comparison for running the in LOCAL_SCRATCH and in normal scratch.  
+
+|                               | LOCAL_SCRATCH |         scratch|
+|-------------------------------|---------------|----------------|    
+|Wall-clock time     |22m 06s      |  50m 06s        |
