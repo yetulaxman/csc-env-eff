@@ -2,7 +2,7 @@
 title: Disk areas in CSC supercomputing environment
 ---
 
-### Imagine that you have a data file and software binary (e.g., data.txt and softwareA_binary) on your Puhti home directory and  also have a shared project (e.g., project_1234) on Puhti and Mahti. How would you safely share your files to other project members on the same supercomputer (i.e., on Puhti) as well as on Mahti (i.e, another supercomputer at CSC)?
+#### Imagine that you have a data file and software binary (e.g., data.txt and softwareA_binary) on your Puhti home directory and  also have a shared project (e.g., project_1234) on Puhti and Mahti. How would you safely share your files to other project members on the same supercomputer (i.e., on Puhti) as well as on Mahti (i.e, another supercomputer at CSC)?
 
 1. First login to Puhti supecomputer.
 
@@ -43,7 +43,7 @@ rsync -azP sofwtareA_binary <username>@mahti.csc.fi:/scratch/project_1234
 
 Note: you can also you CSC object storage environment (i.e., Allas) to share files between supercomputers.
 
-### What would be ideal disk area to perform the following task that require high I/O operations ?
+#### What would be ideal disk area to perform the following task that require high I/O operations ?
 *The task  description*: a big tar file contains around 52000 small files, each file containing one or more nucleotide sequences. Unpack the tar file and convert the necleic acids sequences in each file to corresponing protein sequences using *transeq* software. Once analysis is finished, pack all files into a tar file again.
 
 
@@ -94,7 +94,7 @@ Below is execution time comparison for running the three steps above in LOCAL_SC
 |Total                          | 14m 15s       |   1h 8m 31s    |
               
  
-### How do you make use of local scratch drive on compute node for faster computational tasks? Convert the following normal batch job into the one that uses local scratch drive?
+#### How do you make use of local scratch drive on compute node for faster computational tasks? Convert the following normal batch job into the one that uses local scratch drive?
 
 Below is a normal batch job that pulls docker image from DockerHub and converts into a singularity one  that is compatible for working in HPC environment such as CSC Puhti and Mahti supercomputers. During the conversion process, several layers are retrieved, cached and then converted into a singularity file (.sif format)
 
