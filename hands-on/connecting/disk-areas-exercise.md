@@ -44,7 +44,7 @@ rsync -azP sofwtareA_binary <username>@mahti.csc.fi:/scratch/project_1234
 Note: you can also you CSC object storage environment (i.e., Allas) to share files between supercomputers.
 
 ### What would be ideal disk area to perform the following task that require high I/O operations ?
-*The task  description*: a big tar file contains around 52000 small files, each file containing one or more nucleotide sequences. Unpack the tar file and convert the necleic acids sequences each file to corresponing protein sequences using *transeq* software. Once analysis is finished, make tar file again.
+*The task  description*: a big tar file contains around 52000 small files, each file containing one or more nucleotide sequences. Unpack the tar file and convert the necleic acids sequences in each file to corresponing protein sequences using *transeq* software. Once analysis is finished, pack all files into a tar file again.
 
 
 *Background*: The “normal” Lustre based project specific directories, *scratch* and *projappl*, can store large amounts of data and make it accessible to all the nodes of Puhti. However these directories are not good for managing a large number of files.  If you anyhow need to work with a huge number of files, you should consider using the NVME based local temporary scratch directories, either through normal or interactive batch jobs.
