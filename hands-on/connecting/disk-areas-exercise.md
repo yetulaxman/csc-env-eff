@@ -67,9 +67,9 @@ interactive -c 2 -m 4G -d 250
 # chnage working directory to fast local scratch directory
 cd $LOCAL_SCRATCH
 
-# unpack tar file (fix this link)
+# download tar file and unpack it (fix this link)
 
-wget htttp:a3s.fi/big_data.tar
+wget https//:a3s.fi/big_data.tar
 tar big_data.tar ./
 
 # perform actual analysis
