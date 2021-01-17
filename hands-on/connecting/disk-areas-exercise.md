@@ -117,7 +117,19 @@ export SINGULARITY_CACHEDIR=/scratch/project_2003682/$USER
 singularity pull --name trinity.simg  docker://trinityrnaseq/trinityrnaseq
 ```
 
-Let's take a different example to convert a docker image into singularity image using fast local scratch area ($LOCAL_SCRATCH).
+***Hints***:
+- Request local storage using the --gres flag  in sbatch directive as below:
+
+```
+#SBATCH --gres=nvme:<local_storage_space_per_node>  # e.g., to claim 200 GB of storage, use option --gres=nvme:200. 
+
+```
+- Use the environment variable $LOCAL_SCRATCH to access the local storage on each node.
+
+- Please move any data to shared area once  the job is finished
+
+
+***Solution***
 
 ```bash
 #!/bin/bash
