@@ -105,7 +105,7 @@ More detailed information about batch job specific local storage can be found
  
 ### How do you make use of local scratch drive on compute node for faster computational tasks? Convert the following normal batch job into the one that uses local scratch drive?
 
-Here is a normal batch job that pulls docker image from DockerHub and converts to singularity one  that is compatible for working in HPC environment like Puhti and Mahti. During the conversion process, several layers are retrieved, cached and then converted into singularity file (.sif format)
+Below is a normal batch job that pulls docker image from DockerHub and converts to singularity one  that is compatible for working in HPC environment like Puhti and Mahti. During the conversion process, several layers are retrieved, cached and then converted into singularity file (.sif format)
 
 ```bash
 #!/bin/bash
@@ -129,7 +129,7 @@ singularity pull --name trinity.simg  docker://trinityrnaseq/trinityrnaseq
 - Please move any data to shared area once  the job is finished
 
 
-*Solution:*
+***Solution:***
 
 ```bash
 #!/bin/bash
