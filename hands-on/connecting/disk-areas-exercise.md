@@ -103,8 +103,21 @@ We could do the same analysis procedure in the scratch directory too.  Below is 
 More detailed information about batch job specific local storage can be found 
 [here](../../computing/disk.md).                 
  
-### I/O job operation using batch job
-Let's take a different example to convert a docker images to singularity image using fast local scratch area ($LOCAL_SCRATCH).
+### How do you make use of local scratch drive on compute node for faster computational tasks? Convert the following normal batch job into the one that uses local scratch drive?
+
+Here is a normal batch job that pulls docker image from DockerHub and converts to singularity one  that is compatible for working in HPC environment like Puhti and Mahti. During the conversion process, several layers are retrieved, cached and then converted into singularity file (.sif format)
+
+```bash
+#!/bin/bash
+#SBATCH --time=01:00:00
+#SBATCH --partition=small
+#SBATCH --account=project_xxx
+
+export SINGULARITY_CACHEDIR=/scratch/project_2003682/$USER
+singularity pull --name trinity.simg  docker://trinityrnaseq/trinityrnaseq
+```
+
+Let's take a different example to convert a docker image into singularity image using fast local scratch area ($LOCAL_SCRATCH).
 
 ```bash
 #!/bin/bash
@@ -124,12 +137,3 @@ singularity pull --name trinity.simg docker://trinityrnaseq/trinityrnaseq
 mv trinity.simg /scratch/project_xxx/$USER/                                                            
 ```
 
-```bash
-#!/bin/bash
-#SBATCH --time=00:30:00
-#SBATCH --partition=small
-#SBATCH --account=project_2003682
-export TMPDIR=/scratch/project_2003682/$USER
-export SINGULARITY_CACHEDIR=/scratch/project_2003682/$USER
-singularity pull docker://trinityrnaseq/trinityrnaseq
-```
