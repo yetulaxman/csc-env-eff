@@ -7,7 +7,7 @@ title: Disk areas in CSC supercomputing environment
 1. First login to Puhti supecomputer.
 
 ```bash
-ssh username@puhti.csc.fi
+ssh <username>@puhti.csc.fi
 ```
 You end up in home directory once you login to Puhti. Let's assume that file data.txt is intended for computational use and softwareA_binary is as software needed for analysis
 As you know the project name, you can share file data.txt in scratch folder and softwareA_binary in Projapple directory.
@@ -43,20 +43,14 @@ rsync -azP sofwtareA_binary <username>@mahti.csc.fi:/scratch/project_1234
 
 Note: you can also you CSC object storage environment (i.e., Allas) to share files between supercomputers.
 
-### What would be ideal disk area to use to work with big data file (e.g, tar file containing 52000 small files) and require analysis on every small file.
+### What would be ideal disk area to perform a task that require high I/O operations (e.g, handling big tar file containing 52000 small files)?
+
+The “normal” Lustre based project specific directories, *scratch* and *projappl*, can store large amounts of data and make it accessible to all the nodes of Puhti. However these directories are not good for managing a large number of files.  If you anyhow need to work with a huge number of files, you should consider using the NVME based local temporary scratch directories, either through normal or interactive batch jobs.
 
 To launch an interactive session in Puhti, execute command:
 ```text
 sinteractive -i
 ```
-One of the useful features of interactive jobs is the **fast local scratch area ($LOCAL_SCRATCH)**. The “normal” Lustre based project specific directories, *scratch* and *projappl*, can store large amounts of data and make it accessible to all the nodes of Puhti. However these directories are not good for managing a large number of files. 
-
-Generally you should avoid workflows that require creating thousands of small files. If you anyhow need to work with a huge number of files, 
-you should consider using the NVME based local temporary scratch directories, either through normal or interactive batch jobs.
-The local scratch area is visible only for the specific batch job and it is erased when the batch job ends. 
-Because of that you always first need to import your data set to the local scratch and when you finish, copy the data you want to preserve back to some more 
-permanent storage place like scratch or Allas.
-
 To demonstrate the effectivity of local scratch area let’s study a sample directory called *big_data*. The directory contains about 100 GiB of data in 120 000 files. In the beginning the data is packed in one tar-archive file in the scratch directory of project 2001234 (/scratch/project_2001234/big_data.tar)
 
 First we launch an interactive batch job with 2 cores, 4 GB of memory and 250 GB of fast temporary scratch disk.
@@ -99,9 +93,7 @@ We could do the same analysis procedure in the scratch directory too.  Below is 
 |Step 2. Analysis               | 9m 42s        |   21m 58s      |
 |Step 3. Creating new tar file  | 2m 25s        |   42m 21s      | 
 |Total                          | 14m 15s       |   1h 8m 31s    |
-
-More detailed information about batch job specific local storage can be found 
-[here](../../computing/disk.md).                 
+              
  
 ### How do you make use of local scratch drive on compute node for faster computational tasks? Convert the following normal batch job into the one that uses local scratch drive?
 
@@ -113,7 +105,8 @@ Below is a normal batch job that pulls docker image from DockerHub and converts 
 #SBATCH --partition=small
 #SBATCH --account=project_xxx
 
-export SINGULARITY_CACHEDIR=/scratch/project_xxxx/$USER
+export SINGULARITY_TMPDIR=/scratch/project_xxx/$USER
+export SINGULARITY_CACHEDIR=/scratch/project_xxx/$USER
 singularity pull --name trinity.simg  docker://trinityrnaseq/trinityrnaseq
 ```
 
