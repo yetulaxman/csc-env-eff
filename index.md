@@ -54,7 +54,7 @@ Practice ! practice ! and  practice !!!
 # Handson
 
 {% for handson in site.handson %}
-- [{{ handson.title }}]({{ handson.url | relative_url }})
+- [{{ hand-son.title }}]({{ hands-on.url | relative_url }})
 {% endfor %}
 
 # Excercises
