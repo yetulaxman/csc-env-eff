@@ -6,7 +6,7 @@ plugins:
 collections:
     lectures:
         output: true
-    test:
+    slides:
         output: true
     exercises:
         output: true
