@@ -19,7 +19,7 @@ defaults:
       layout: "slides-csc"
   -
     scope:
-      path: "_handson"
+      path: "handson"
     values:
       layout: "default"
   -
