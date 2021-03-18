@@ -6,7 +6,7 @@ plugins:
 collections:
     lectures:
         output: true
-    tutorials:
+    hands-on:
         output: true
     exercises:
         output: true
