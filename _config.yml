@@ -19,7 +19,7 @@ defaults:
       layout: "slides-csc"
   -
     scope:
-      path: "_hands-on"
+      path: "_hands-onn"
     values:
       layout: "default"
   -
