@@ -1,0 +1,38 @@
+<!doctype html>
+
+<!-- Minimalistic slideshow -->
+
+<html lang="en">
+
+    <head>
+        <link rel="stylesheet" href="{{ "/css/slides-csc.css" | relative_url }}"/>
+        <link rel="stylesheet" href="{{ "/css/highlight-default.css" | relative_url }}"/>
+        <script src="{{ "/js/slides-csc.js" | relative_url }}"></script>
+    </head>
+
+    <body style="display: none;"
+          onload="init();"
+          onkeydown="keypress(event);"
+          onclick="mouseclick(event);"
+          onresize="resizeRem();">
+
+        {% if page.titleslide %}
+        <div class="title-slide">
+            <div class="title-box">
+                <div>
+                    <div class="title">
+                        Using CSC env efficiently — {{ page.title }}
+                    </div>
+                    <div class="author">
+                        {{ page.author }} {{ page.presentation-date }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {{ content }}
+
+    </body>
+
+</html>
