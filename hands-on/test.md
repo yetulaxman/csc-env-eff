@@ -2,10 +2,27 @@
 title: Hello-World Docker
 ---
 
+## Exercises
+
+**1. Run a container from an image named "alpine" from DockerHub and execute a command inside that container so that output from the container is "welcome to csc"**
+
+```bash
+docker run alpine echo "welcome to CSC"
+```
+
+**2. How would you run the same `hello-world` example from a different docker registry? Name few third-party docker registries besides DockerHub**
 
 
-#### Imagine that you have a data file and software binary (e.g., data.txt and softwareA_binary) on your Puhti home directory and  also have a shared project (e.g., project_1234) on Puhti and Mahti. How would you safely share your files to other project members on the same supercomputer (i.e., on Puhti) as well as on Mahti (i.e, another supercomputer at CSC)?
+Default registry for docker client is DockerHub. That is why *docker run* command fetched hello-world image from DockerHub   For other registries, one has to write fully qualified name of docker images and it would look something like this: *host name/repository/imagename:tag*.
 
-*Background*: This exercise is aimed at familiarising yourself with main disc areas in Puhti and Mahti supercomputers. Data files needed for computational analysis should be stored and shared in *scratch* directories and any software compilations and binaries should be shared in *proappl* directory. In order to find actual directories use commands such as `csc-workspaces` and `csc-projects`. Data transfer between two supercomputers can be done with many tools including `rsync`. In this example try to avoid using *allas* for data transfer between the supercomupters. 
+A fully qualified generic name for referencing *hello-world* image from DockerHub is as below:
 
-***Solution:***
+```bash
+docker run docker.io/library/hello-world  # from dockerHub
+```
+
+Many other third party docker registries (=storage and distribution system for named Docker images) do exist besides DockerHub. Few examples include:
+- Google Container Registry (hostname = gcr.io)
+- REDHAT Quay Container Registry (hostname = quay.io)
+- Amazon Elastic Container Registry (histname = account-id.dkr.ecr.region.amazon.aws.com)
+
