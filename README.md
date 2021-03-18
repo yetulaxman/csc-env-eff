@@ -1,3 +1,4 @@
+https://yetulaxman.github.io/csc-env-eff/
 # Using CSC Environment Efficiently
 
 # Note! This repository is a work in progress
