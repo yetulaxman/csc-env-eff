@@ -1,5 +1,5 @@
 ---
-title: WIP - Biocontainers(101) - Containerised Bioinformatics
+title: Using CSC HPC Environment Efficiently
 author: CSC Training
 ---
 
