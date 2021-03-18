@@ -1,5 +1,5 @@
 ---
-title: Training Environment for Course
+title: Training Environment for Course hands-on
 ---
 
 
