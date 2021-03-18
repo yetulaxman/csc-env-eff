@@ -51,7 +51,7 @@ Practice ! practice ! and  practice !!!
 
 
 
-# Hands-on
+# Handson
 
 {% for handson in site.handson %}
 - [{{ handson.title }}]({{ handson.url | relative_url }})
