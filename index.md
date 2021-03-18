@@ -53,7 +53,7 @@ Practice ! practice ! and  practice !!!
 
 # Handson
 
-{% for hands-onn in site.hands-on %}
+{% for hands-on in site.hands-on %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endfor %}
 
