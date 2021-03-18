@@ -6,7 +6,7 @@ plugins:
 collections:
     lectures:
         output: true
-    handson:
+    _hands-on:
         output: true
     exercises:
         output: true
@@ -19,7 +19,7 @@ defaults:
       layout: "slides-csc"
   -
     scope:
-      path: "_handson"
+      path: "_hands-on"
     values:
       layout: "default"
   -
