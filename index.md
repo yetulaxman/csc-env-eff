@@ -51,10 +51,10 @@ Practice ! practice ! and  practice !!!
 
 
 
-# Tutorials
+# Hands-on
 
-{% for tutorial in site.tutorials %}
-- [{{ tutorial.title }}]({{ tutorial.url | relative_url }})
+{% for hands-on in site.hands-on %}
+- [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endfor %}
 
 # Excercises
