@@ -17,10 +17,10 @@ defaults:
       layout: "slides-csc"
   -
     scope:
-      path: "_hands-on"
+      type: "_hands-on"
+      path: "/connecting"
     values:
-      i18n: "_hands-on"
-      layout: "connecting"
+      layout: "default"
   -
     scope:
       path: "_exercises"
