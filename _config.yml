@@ -19,6 +19,7 @@ defaults:
     scope:
       path: "_hands-on"
     values:
+      i18n: "_hands-on"
       layout: "connecting"
   -
     scope:
