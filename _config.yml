@@ -10,3 +10,21 @@ collections:
     permalink: /:path/
 
 permalink: pretty
+
+
+defaults:
+  -
+    scope:
+      path: "_lectures"
+    values:
+      layout: "slides-csc"
+  -
+    scope:
+      path: "_hands-on/connecting"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "_exercises"
+    values:
+      layout: "default":wq!
