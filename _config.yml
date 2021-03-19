@@ -8,6 +8,7 @@ collections:
         output: true
     hands-on:
         output: true
+        permalink: /:path/
     exercises:
         output: true
 
