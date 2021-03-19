@@ -19,7 +19,7 @@ defaults:
     scope:
       path: "_hands-on/connecting"
     values:
-      layout: "default"
+      layout: "connecting"
   -
     scope:
       path: "_exercises"
