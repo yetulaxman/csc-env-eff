@@ -9,9 +9,6 @@ collections:
     output: true
     permalink: /:path/
 
-permalink: pretty
-
-
 defaults:
   -
     scope:
@@ -27,4 +24,4 @@ defaults:
     scope:
       path: "_exercises"
     values:
-      layout: "default":wq!
+      layout: "default"
