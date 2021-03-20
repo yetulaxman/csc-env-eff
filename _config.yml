@@ -5,8 +5,10 @@ plugins:
 
 
 collections:
-  handson/_connecting:
+  collections_dir: hands-on
+  connecting:
     output: true
+    permalink: /:name
 
 defaults:
   -
