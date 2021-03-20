@@ -52,21 +52,13 @@ Practice ! practice ! and  practice !!!
 
 # Handson
 
-{% assign titles = site.hands-on |  sort: "title" | reverse %}
-{% for title in titles %}
-  <h4>{{ title.title }}</h4>
-{% endfor %}
+{% assign site.hands-on = site.hands-on |  sort: "title" | reverse %}
 
+## here15
 
-## here14
-{% assign titles = site.hands-on reversed %}
-{% for title in titles %}
-  <h4>{{ title.title }}</h4>
-{% endfor %}
 
 ## Connecting
 {% for hands-on in site.hands-on %}
-{% assign hands-on = site.hands-on  | sort "title" %}
 {{ hands-on.topic}}
 {% if hands-on.topic == 'connecting' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
