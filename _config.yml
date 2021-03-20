@@ -5,7 +5,7 @@ plugins:
 
 
 collections:
-  collections_dir: hands-on
+  collections_dir: handson
   connecting:
     output: true
     permalink: /:name
