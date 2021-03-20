@@ -59,7 +59,7 @@ Practice ! practice ! and  practice !!!
 
 {% for hands-on in site.hands-on %}
 
-## {{ hands-on.title }}
+## {{ hands-on.topic }}
 
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endfor %}
