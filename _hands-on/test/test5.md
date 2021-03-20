@@ -1,4 +1,5 @@
 ---
+topic: test
 title: Training Environment for Course
 ---
 
