@@ -3,9 +3,28 @@ title: BioMonth - CSC supercomputing and data management for bioscientists
 plugins:
   - jekyll-sitemap
 
-
 collections:
-  collections_dir: handson
-  connecting:
-    output: true
+    lectures:
+        output: true
+    hands-on:
+        output: true
+        permalink: /:path/
+    exercises:
+        output: true
 
+defaults:
+  -
+    scope:
+      path: "_lectures"
+    values:
+      layout: "slides-csc"
+  -
+    scope:
+      path: "_hands-on"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "_exercises"
+    values:
+      layout: "default"
