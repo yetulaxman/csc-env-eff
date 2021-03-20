@@ -54,7 +54,7 @@ Practice ! practice ! and  practice !!!
 
 ## Connecting
 {% for hands-on in site.hands-on %}
-{% assign hands-on = hands-on | sort %}
+{% assign hands-on = hands-on | sort "title" %}
 {% if hands-on.topic == 'connecting' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
@@ -62,7 +62,7 @@ Practice ! practice ! and  practice !!!
 
 ## Disk-areas
 {% for hands-on in site.hands-on %}
-{% assign hands-on = hands-on | sort %}
+{% assign hands-on = hands-on | sort "title" %}
 {% if hands-on.topic == 'disk-areas' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
@@ -71,7 +71,7 @@ Practice ! practice ! and  practice !!!
 
 ## Allas
 {% for hands-on in site.hands-on %}
-{% assign hands-on = hands-on | sort %}
+{% assign hands-on = hands-on | sort "title" %}
 {% if hands-on.topic == 'allas' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
@@ -80,7 +80,7 @@ Practice ! practice ! and  practice !!!
 
 ## Batch Jobs
 {% for hands-on in site.hands-on %}
-{% assign hands-on = hands-on | sort %}
+{% assign hands-on = hands-on | sort "title"  %}
 {% if hands-on.topic == 'Batch jobs' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
@@ -89,7 +89,7 @@ Practice ! practice ! and  practice !!!
 
 ## Modules
 {% for hands-on in site.hands-on %}
-{% assign hands-on = hands-on | sort %}
+{% assign hands-on = hands-on | sort "title" %}
 {% if hands-on.topic == 'modules' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
@@ -97,7 +97,7 @@ Practice ! practice ! and  practice !!!
 
 ## Singularity
 {% for hands-on in site.hands-on %}
-{% assign hands-on = hands-on | sort %}
+{% assign hands-on = hands-on | sort "title" %}
 {% if hands-on.topic == 'singularity' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
@@ -105,7 +105,7 @@ Practice ! practice ! and  practice !!!
 
 ## Throughput
 {% for hands-on in site.hands-on %}
-{% assign hands-on = hands-on | sort %}
+{% assign hands-on = hands-on | sort "title" %}
 {% if hands-on.topic == 'throughput' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
@@ -114,7 +114,7 @@ Practice ! practice ! and  practice !!!
 
 ## Installing
 {% for hands-on in site.hands-on %}
-{% assign hands-on = hands-on | sort %}
+{% assign hands-on = hands-on | sort "title" %}
 {% if hands-on.topic == 'installing' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
