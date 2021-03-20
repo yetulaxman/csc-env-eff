@@ -5,7 +5,7 @@ plugins:
 
 
 collections:
-  hands-on:
+  handson:
     output: true
     permalink: /:path/
 
@@ -17,8 +17,7 @@ defaults:
       layout: "slides-csc"
   -
     scope:
-      type: "_hands-on"
-      path: "/connecting/"
+      path: "handson/_connecting"
     values:
       layout: "default"
   -
