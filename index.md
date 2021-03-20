@@ -52,9 +52,9 @@ Practice ! practice ! and  practice !!!
 
 # Handson
 
-{% assign site.hands-on = site.hands-on |  sort: "title" | reverse %}
+{% assign items = site.hands-on |  sort: "title" | reverse %}
 
-## here15
+## here16
 
 
 ## Connecting
@@ -90,7 +90,7 @@ Practice ! practice ! and  practice !!!
 
 
 ## Modules
-{% for hands-on in site.hands-on %}
+{% for hands-on in items %}
 {% if hands-on.topic == 'modules' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
@@ -112,7 +112,8 @@ Practice ! practice ! and  practice !!!
 
 
 ## Installing
-{% for hands-on in site.hands-on %}
+{% assign items = site.hands-on |  sort: "title" | reverse %}
+{% for hands-on in items %}
 {% if hands-on.topic == 'installing' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
