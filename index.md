@@ -53,11 +53,11 @@ Practice ! practice ! and  practice !!!
 
 # Handson
 
-{% for handson in site.handson %}
-- [{{ handson.title }}]({{ handson.url | relative_url }})
+{% for connecting in site.connecting %}
+- [{{ connecting.title }}]({{ connecting.url | relative_url }})
 {% endfor %}
 
-# Excercises
+# Excercise
 
 {% for exercise in site.exercises %}
 - [{{ exercise.title }}]({{ exercise.url | relative_url }})
