@@ -54,9 +54,6 @@ Practice ! practice ! and  practice !!!
 
 {% assign items = site.hands-on |  sort: "title" | reverse %}
 
-## here16
-
-
 ## Connecting
 {% for hands-on in items %}
 {{ hands-on.topic}}
@@ -72,7 +69,6 @@ Practice ! practice ! and  practice !!!
 {% endif %}
 {% endfor %}
 
-
 ## Allas
 {% for hands-on in items %}
 {% if hands-on.topic == 'allas' %}
@@ -80,14 +76,12 @@ Practice ! practice ! and  practice !!!
 {% endif %}
 {% endfor %}
 
-
 ## Batch Jobs
 {% for hands-on in items %}
 {% if hands-on.topic == 'Batch jobs' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
 {% endfor %}
-
 
 ## Modules
 {% for hands-on in items %}
@@ -110,13 +104,13 @@ Practice ! practice ! and  practice !!!
 {% endif %}
 {% endfor %}
 
-
 ## Installing
 {% for hands-on in items %}
 {% if hands-on.topic == 'installing' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
 {% endfor %}
+
 
 
 # Excercise
