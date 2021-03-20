@@ -52,13 +52,13 @@ Practice ! practice ! and  practice !!!
 
 # Handson
 
-{% assign hands-on = site.hands-on  | sort "title" %}
 {{ hands-on.title }}
 
-## here5
+## here6
 
 ## Connecting
 {% for hands-on in site.hands-on %}
+{{ hands-on.topic}}
 {% if hands-on.topic == 'connecting' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
