@@ -58,7 +58,7 @@ Practice ! practice ! and  practice !!!
 
 
 ## Connecting
-{% for hands-on in site.hands-on %}
+{% for hands-on in items %}
 {{ hands-on.topic}}
 {% if hands-on.topic == 'connecting' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
@@ -66,7 +66,7 @@ Practice ! practice ! and  practice !!!
 {% endfor %}
 
 ## Disk-areas
-{% for hands-on in site.hands-on %}
+{% for hands-on in items %}
 {% if hands-on.topic == 'disk-areas' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
@@ -74,7 +74,7 @@ Practice ! practice ! and  practice !!!
 
 
 ## Allas
-{% for hands-on in site.hands-on %}
+{% for hands-on in items %}
 {% if hands-on.topic == 'allas' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
@@ -82,7 +82,7 @@ Practice ! practice ! and  practice !!!
 
 
 ## Batch Jobs
-{% for hands-on in site.hands-on %}
+{% for hands-on in items %}
 {% if hands-on.topic == 'Batch jobs' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
@@ -97,14 +97,14 @@ Practice ! practice ! and  practice !!!
 {% endfor %}
 
 ## Singularity
-{% for hands-on in site.hands-on %}
+{% for hands-on in items %}
 {% if hands-on.topic == 'singularity' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
 {% endfor %}
 
 ## Throughput
-{% for hands-on in site.hands-on %}
+{% for hands-on in items %}
 {% if hands-on.topic == 'throughput' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
@@ -112,7 +112,6 @@ Practice ! practice ! and  practice !!!
 
 
 ## Installing
-{% assign items = site.hands-on |  sort: "title" | reverse %}
 {% for hands-on in items %}
 {% if hands-on.topic == 'installing' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
