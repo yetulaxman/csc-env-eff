@@ -1,6 +1,6 @@
 ---
 topic: connecting
-title: Log in Puhti with ssh
+title: Tutorial - Log in Puhti with ssh
 ---
 
 # Log in Puhti with ssh
