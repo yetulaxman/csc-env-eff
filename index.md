@@ -52,17 +52,19 @@ Practice ! practice ! and  practice !!!
 
 # Handson
 
+## Connecting
 {% for hands-on in site.hands-on %}
 {% if hands-on.topic == 'Connecting' %}
-## Connecting
-- [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
-{% endif %}
-{% if  hands-on.topic  == 'test' %}
-## Test
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
 {% endfor %}
 
+## Test
+{% for hands-on in site.hands-on %}
+{% if hands-on.topic == 'test' %}
+- [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
+{% endif %}
+{% endfor %}
 
 # Excercise
 
