@@ -53,13 +53,14 @@ Practice ! practice ! and  practice !!!
 # Handson
 
 {% for hands-on in site.hands-on %}
-{% if hands-on.topic == 'test' %}
-## hell1
+{% if hands-on.topic == 'connecting' %}
+## Connecting
+- [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
 {% if  hands-on.topic  == 'test' %}
-## hell2
-{% endif %}
+## Test
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
+{% endif %}
 {% endfor %}
 
 
