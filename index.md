@@ -56,7 +56,6 @@ Practice ! practice ! and  practice !!!
 
 ## Connecting
 {% for hands-on in items %}
-{{ hands-on.topic}}
 {% if hands-on.topic == 'connecting' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
