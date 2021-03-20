@@ -57,6 +57,11 @@ Practice ! practice ! and  practice !!!
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endfor %}
 
+# test
+{% for hands-on in site.hands-on.test %}
+- [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
+{% endfor %}
+
 # Excercise
 
 {% for exercise in site.exercises %}
