@@ -58,7 +58,7 @@ Practice ! practice ! and  practice !!!
 # Handson
 
 {% for hands-on in site.hands-on %}
-{% if {{ hands-on.topic }} = "test"}
+{% if {{ hands-on.topic }} == "test"}
 ## hell
 {% endif %}
 ## {{ hands-on.topic }}
