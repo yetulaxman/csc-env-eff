@@ -57,10 +57,11 @@ Practice ! practice ! and  practice !!!
   <h4>{{ title.title }}</h4>
 {% endfor %}
 
+
 ## here13
-{% assign titles = site.hands-on }
-{% for title in titles reversed %}
-  <h4>{{ title.title }}</h4>
+{% assign items = site.hands-on }
+{% for item in items  %}
+  <h4>{{ item.vtitle }}</h4>
 {% endfor %}
 
 ## Connecting
