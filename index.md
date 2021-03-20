@@ -52,7 +52,7 @@ Practice ! practice ! and  practice !!!
 
 # Handson
 {% assign projects = site.hands-on %}
-{% for project in projects reversed %}
+{% for project in projects reverse %}
   {{ project.title }}
   
 {% assign titles = site.hands-on |  sort: "title" %}
