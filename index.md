@@ -55,7 +55,7 @@ Practice ! practice ! and  practice !!!
 {% for project in projects reversed %}
   {{ project.title }}
   
-{% assign titles = site.hands-on |  reversed: "title" %}
+{% assign titles = site.hands-on |  sort: "title" %}
 {% for title in titles %}
   <h4>{{ title.title }}</h4>
 {% endfor %}
