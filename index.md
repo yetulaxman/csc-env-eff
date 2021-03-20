@@ -59,9 +59,9 @@ Practice ! practice ! and  practice !!!
 
 
 ## here13
-{% assign items = site.hands-on }
-{% for item in items  %}
-  <h4>{{ item.vtitle }}</h4>
+{% assign titles = site.hands-on  %}
+{% for title in titles %}
+  <h4>{{ title.title }}</h4>
 {% endfor %}
 
 ## Connecting
