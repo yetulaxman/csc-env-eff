@@ -57,7 +57,7 @@ Practice ! practice ! and  practice !!!
 
 # Handson
 
-{% for hands-on in site.hands-on[1] %}
+{% for hands-on in site.hands-on %}
 
 ## {{ hands-on.title }}
 
