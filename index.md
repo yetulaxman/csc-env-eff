@@ -50,6 +50,10 @@ Practice ! practice ! and  practice !!!
 - hands-on tutorial
 
 
+# test
+{% for hands in site.hands-on.test %}
+- [{{ hands.title }}]({{ hands.url | relative_url }})
+{% endfor %}
 
 # Handson
 
@@ -57,10 +61,6 @@ Practice ! practice ! and  practice !!!
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endfor %}
 
-# test
-{% for hands-on in site.hands-on.test %}
-- [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
-{% endfor %}
 
 # Excercise
 
