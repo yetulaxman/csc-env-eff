@@ -58,8 +58,8 @@ Practice ! practice ! and  practice !!!
 {% endfor %}
 
 
-## here13
-{% assign titles = site.hands-on  %}
+## here14
+{% assign titles = site.hands-on reversed %}
 {% for title in titles %}
   <h4>{{ title.title }}</h4>
 {% endfor %}
