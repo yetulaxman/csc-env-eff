@@ -1,6 +1,6 @@
 ---
 topic: modules
-title: Tutorial - Modules Puhti
+title: Tutorial - Modules in Puhti
 ---
 
 # Modules in Puhti
