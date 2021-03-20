@@ -8,4 +8,4 @@ collections:
   collections_dir: handson
   connecting:
     output: true
-    permalink: /:name
+
