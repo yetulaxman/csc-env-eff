@@ -50,15 +50,9 @@ Practice ! practice ! and  practice !!!
 - hands-on tutorial
 
 
-# test
-{% for hands in site.hands-on.test %}
-- [{{ hands.title }}]({{ hands.url | relative_url }})
-{% endfor %}
-
 # Handson
 
 {% for hands-on in site.hands-on %}
-
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endfor %}
 
