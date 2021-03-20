@@ -55,10 +55,10 @@ Practice ! practice ! and  practice !!!
 
 {% assign titles = site.hands-on | sort: "title" %}
 {% for title in titles %}
-  <h4>{{ title.topic }}</h4>
+  <h4>{{ title.title }}</h4>
 {% endfor %}
 
-## here8
+## here9
 
 ## Connecting
 {% for hands-on in site.hands-on %}
