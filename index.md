@@ -52,9 +52,9 @@ Practice ! practice ! and  practice !!!
 
 # Handson
 
-{{ site.hands-on }}
+{{ site.hands-on.title }}
 {% assign hands-on = site.hands-on  | sort "title" %}
-{{ site.hands-on }}
+{{ hands-on.title }}
 
 ## Connecting
 {% for hands-on in site.hands-on %}
