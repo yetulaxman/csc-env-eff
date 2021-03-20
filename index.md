@@ -54,14 +54,63 @@ Practice ! practice ! and  practice !!!
 
 ## Connecting
 {% for hands-on in site.hands-on %}
-{% if hands-on.topic == 'Connecting' %}
+{% if hands-on.topic == 'connecting' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
 {% endfor %}
 
-## Test
+## allas
 {% for hands-on in site.hands-on %}
-{% if hands-on.topic == 'test' %}
+{% if hands-on.topic == 'allas' %}
+- [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
+{% endif %}
+{% endfor %}
+
+## batch_jobs
+{% for hands-on in site.hands-on %}
+{% if hands-on.topic == 'batch jobs' %}
+- [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
+{% endif %}
+{% endfor %}
+
+## disk-areas
+{% for hands-on in site.hands-on %}
+{% if hands-on.topic == 'disk-areas' %}
+- [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
+{% endif %}
+{% endfor %}
+
+## installing
+{% for hands-on in site.hands-on %}
+{% if hands-on.topic == 'installing' %}
+- [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
+{% endif %}
+{% endfor %}
+
+## modules
+{% for hands-on in site.hands-on %}
+{% if hands-on.topic == 'modules' %}
+- [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
+{% endif %}
+{% endfor %}
+
+## installing
+{% for hands-on in site.hands-on %}
+{% if hands-on.topic == 'installing' %}
+- [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
+{% endif %}
+{% endfor %}
+
+## singularity
+{% for hands-on in site.hands-on %}
+{% if hands-on.topic == 'singularity' %}
+- [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
+{% endif %}
+{% endfor %}
+
+## throughput
+{% for hands-on in site.hands-on %}
+{% if hands-on.topic == 'throughput' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
 {% endfor %}
