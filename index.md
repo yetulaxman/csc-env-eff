@@ -55,7 +55,7 @@ Practice ! practice ! and  practice !!!
 {% assign hands-on = site.hands-on  | sort "title" %}
 {{ hands-on.title }}
 
-## here
+## here2
 
 ## Connecting
 {% for hands-on in site.hands-on %}
