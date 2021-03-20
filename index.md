@@ -52,7 +52,7 @@ Practice ! practice ! and  practice !!!
 
 # Handson
 
-{{ hands-on.title }}
+{{ site.hands-on.title }}
 
 ## here6
 
