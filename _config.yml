@@ -18,9 +18,9 @@ defaults:
       layout: "slides-csc"
   -
     scope:
-      path: "handson/_connecting"
+      path: "handson"
     values:
-      layout: "default"
+      layout: "connecting"
   -
     scope:
       path: "_exercises"
