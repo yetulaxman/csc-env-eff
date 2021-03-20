@@ -1,6 +1,6 @@
 ---
 topic: throughput
-title: exercise - Gaussian GREASY
+title: Exercise - Gaussian GREASY
 ---
 
 # Using GREASY for running multiple Gaussian jobs on Puhti
