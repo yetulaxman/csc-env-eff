@@ -9,20 +9,3 @@ collections:
   connecting:
     output: true
     permalink: /:name
-
-defaults:
-  -
-    scope:
-      path: "_lectures"
-    values:
-      layout: "slides-csc"
-  -
-    scope:
-      path: "handson/connecting"
-    values:
-      layout: "connecting"
-  -
-    scope:
-      path: "_exercises"
-    values:
-      layout: "default"
