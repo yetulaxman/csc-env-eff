@@ -1,6 +1,6 @@
 ---
 topic: disk-areas
-title: Disk areas in CSC supercomputing environment
+title: Tutorial - Disk areas in CSC supercomputing environment
 ---
 
 # Disk areas in CSC supercomputing environment
