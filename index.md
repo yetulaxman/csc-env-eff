@@ -58,10 +58,10 @@ Practice ! practice ! and  practice !!!
 # Handson
 
 {% for hands-on in site.hands-on %}
-
+{% if hands-on.topic = "test"}
 ## {{ hands-on.topic }}
-
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
+{% endif %}
 {% endfor %}
 
 
