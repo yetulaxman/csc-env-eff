@@ -51,14 +51,16 @@ Practice ! practice ! and  practice !!!
 
 
 # Handson
-
-
-{% assign titles = site.hands-on |  reverse: "title" %}
+{% assign projects = site.hands-on %}
+{% for project in projects reversed %}
+  {{ project.title }}
+  
+{% assign titles = site.hands-on |  reversed: "title" %}
 {% for title in titles %}
   <h4>{{ title.title }}</h4>
 {% endfor %}
 
-## here10
+## here11
 
 ## Connecting
 {% for hands-on in site.hands-on %}
