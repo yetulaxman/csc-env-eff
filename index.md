@@ -53,7 +53,7 @@ Practice ! practice ! and  practice !!!
 # Handson
 
 
-{% assign titles = site.hands-on | sort: "title" %}
+{% assign titles = site.hands-on |  reverse: "title" %}
 {% for title in titles %}
   <h4>{{ title.title }}</h4>
 {% endfor %}
