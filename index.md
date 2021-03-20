@@ -77,7 +77,7 @@ Practice ! practice ! and  practice !!!
 
 ## Batch Jobs
 {% for hands-on in site.hands-on %}
-{% if hands-on.topic == 'Batch Jobs' %}
+{% if hands-on.topic == 'Batch jobs' %}
 - [{{ hands-on.title }}]({{ hands-on.url | relative_url }})
 {% endif %}
 {% endfor %}
